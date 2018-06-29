@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block title %} {{super()}} | More Title {% endblock %}
+{% block content %} 
+
+  <p class="lead">Welcome {{ session['name'] }}</p>
+
+{% endblock %}

@@ -4,6 +4,15 @@
 
 <div class="row">
   <div class="col-md-8 offset-2">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flashes">
+          {% for category, message in messages %}
+            <p class="alert-{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
     <h1 class="text-center mt-5 p-5">Login</h1>
     <form action="/login" class="mt-5" method="POST">
       <div class="form-group">
